@@ -5,8 +5,16 @@ class ParticleSystem {
     }
 
     addParticle() {
+        let p = random();
+        if(p > 0.7){
         this.particles.push(new Particle(this.origin));
+    }else if(0.3< p < 0.7) {
+        this.particles.push(new Recticle(this.origin));
+    }else{
+        this.particles.push(new Line(this.origin));
     }
+}
+    
 
     applyGravity(g) {
         this.applyForce(g);
